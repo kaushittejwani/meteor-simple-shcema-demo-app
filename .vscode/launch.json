@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to Chrome",
+      "port": 3000,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}/imports"
+    },
+    {
+      "name": "Meteor: Node",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/imports",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "start"],
+      "outputCapture": "std"
+    },
+    {
+      "name": "Attach to Chrome",
+      "port": 3000,
+      "request": "attach",
+      "url": "http://localhost:3000",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}/imports"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Meteor: All",
+      "configurations": ["Meteor: Node", "Attach to Chrome"]
+    }
+  ]
+}
